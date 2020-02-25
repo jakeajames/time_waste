@@ -486,6 +486,7 @@
 				DEVELOPMENT_TEAM = 22G2QV87A2;
 				HEADER_SEARCH_PATHS = "\"$(SRCROOT)/time_waste\"";
 				INFOPLIST_FILE = time_waste/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -510,6 +511,7 @@
 				DEVELOPMENT_TEAM = 22G2QV87A2;
 				HEADER_SEARCH_PATHS = "\"$(SRCROOT)/time_waste\"";
 				INFOPLIST_FILE = time_waste/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

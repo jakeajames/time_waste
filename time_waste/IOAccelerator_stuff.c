@@ -133,8 +133,12 @@ int init_IOAccelerator() {
 
     kern_return_t kr = IOServiceOpen(IOGraphicsAccelerator2, mach_task_self(), IOAccelCommandQueue2_type, &IOAccelCommandQueue2);
     if (kr) {
-        printf("[-] Failed to open IOAccelCommandQueue2: 0x%x (%s)\n", kr, mach_error_string(kr));
-        return kr;
+        // iOS 12. should probably move this to offsets.m
+        kern_return_t kr2 = IOServiceOpen(IOGraphicsAccelerator2, mach_task_self(), 5, &IOAccelCommandQueue2);
+        if (kr2) {
+            printf("[-] Failed to open IOAccelCommandQueue2: 0x%x (%s)\n", kr, mach_error_string(kr));
+            return kr;
+        }
     }
 
     kr = IOServiceOpen(IOGraphicsAccelerator2, mach_task_self(),
