@@ -63,6 +63,8 @@ int kstruct_offsets_13_0[] = {
     0x7c,  // KFREE_ADDR_OFFSET
     
     0xdd0, // IOSURFACE_CREATE_OUTSIZE
+    
+    0xb8,  // getExternalTrapForIndex
 };
 
 int kstruct_offsets_12_0[] = {
@@ -111,6 +113,8 @@ int kstruct_offsets_12_0[] = {
     0x7c,  // KFREE_ADDR_OFFSET
     
     0xdd0, // IOSURFACE_CREATE_OUTSIZE
+    
+    0xb7,  // getExternalTrapForIndex
 };
 
 int koffset(enum kstruct_offset offset) {
