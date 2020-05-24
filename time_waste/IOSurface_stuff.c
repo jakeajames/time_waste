@@ -86,12 +86,15 @@ int IOSurface_removeValue(struct IOSurfaceValueArgs *args, size_t args_size) {
 }
 
 int IOSurface_remove_property(uint32_t key) {
-    struct IOSurfaceValueArgs args = {
-        .surface_id = IOSurface_ID
-    };
-    args.binary[0] = key;
-    args.binary[1] = 0;
-    return IOSurface_removeValue(&args, 16);
+    uint32_t argsSz = sizeof(struct IOSurfaceValueArgs) + 2 * sizeof(uint32_t);
+    struct IOSurfaceValueArgs *args = malloc(argsSz);
+    bzero(args, argsSz);
+    args->surface_id = IOSurface_ID;
+    args->binary[0] = key;
+    args->binary[1] = 0;
+    int ret = IOSurface_removeValue(args, 16);
+    free(args);
+    return ret;
 }
 
 int IOSurface_kalloc(void *data, uint32_t size, uint32_t kalloc_key) {
