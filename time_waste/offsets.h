@@ -48,7 +48,9 @@ enum kstruct_offset {
     
     KFREE_ADDR_OFFSET,
     
-    IOSURFACE_CREATE_OUTSIZE
+    IOSURFACE_CREATE_OUTSIZE,
+    
+    OFFSET_GETFI,
 };
 
 int koffset(enum kstruct_offset offset);
